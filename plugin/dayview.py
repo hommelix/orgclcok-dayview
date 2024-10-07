@@ -111,7 +111,7 @@ class ProjectClocks(list):  # List['ProjectClock']
             )
 
 
-ORGCLKREGEXP = ':CLOCK:\s\[(.*)\]--\[(.*)\].*'  # noqa: W605
+ORGCLKREGEXP = r':CLOCK:\s\[(.*)\]--\[(.*)\].*'
 
 
 def read_org(filepath):
@@ -127,7 +127,7 @@ def read_buffer(buffer):
     for line in buffer:
         lineno = lineno + 1
         if line.startswith('*'):
-            [description] = re.findall('^\*+ (.*)\s*$', line)  # noqa: W605
+            [description] = re.findall(r'^\*+ (.*)\s*$', line)
         elif ':PJN:' in line:
             pjn = line.split(':PJN:')[1].strip()[4:]
             if pjn == '':
