@@ -111,7 +111,7 @@ class ProjectClocks(list):  # List['ProjectClock']
             )
 
 
-ORGCLKREGEXP = r':CLOCK:\s\[(.*)\]--\[(.*)\].*'
+ORGCLKREGEXP = r'CLOCK:\s\[(.*)\]--\[(.*)\].*'
 
 
 def read_org(filepath):
